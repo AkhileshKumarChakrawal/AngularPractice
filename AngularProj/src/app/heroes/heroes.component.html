@@ -1,0 +1,40 @@
+<h1>{{name}}</h1>
+<div><span>id: </span>{{hero.id}}</div>
+<div><span>name: </span>{{hero.name | uppercase}}</div>
+
+
+<div>
+  <label>name:
+  <input [(ngModel)]="hero.name">
+  </label>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let hr of heros">
+  <tr>
+    <td>{{hr.id}}</td>
+    <td>{{hr.name}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<ul class="heroes">
+  <li *ngFor="let hr of heros"  [class.selected]="hero === selectedHero" (click)="onselect(hero)">
+    <span class="badge">{{hr.id}}</span>  {{hr.name}}
+  </li>
+</ul>
+<div>
+  <h2>{{selectedhero}}</h2>
+</div>
+<div><span>id: </span>{{selectedhero.id}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="selectedhero.name">
+  </label>
+</div>
