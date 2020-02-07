@@ -1,0 +1,57 @@
+
+<form [formGroup]="regForm" (ngSubmit)="onsubmit()">
+ <div> <label>
+    first name:
+    <input type="text" formControlName="fname">
+  </label>
+ </div>
+  <div>
+  <label>
+    last name:
+    <input type="text" formControlName="lname">
+  </label>
+  </div>
+  <div formGroupName="address">
+    <h3>Address</h3>
+<div>
+    <label>
+      Street:
+      <input type="text" formControlName="address1">
+    </label>
+</div>
+    <div>
+    <label>
+      City:
+      <input type="text" formControlName="address2">
+    </label>
+    </div>
+    <div>
+    <label>
+      State:
+      <input type="text" formControlName="state">
+    </label>
+    </div>
+    <div>
+    <label>
+      Zip Code:
+      <input type="text" formControlName="zip">
+    </label>
+    </div>
+  </div>
+  <!--<div formArrayName="mobile">
+    <h2>enter mobile number</h2>
+    <button (click)="dynamicmob()">Add new mobile</button>
+
+  </div>
+-->
+  <button type="submit" [disabled]="!regForm.valid">submit</button>
+  <p>
+    <button (click)="updateformData()">partially update</button>
+  </p>
+
+</form>
+
+<p>{{regForm.status}}</p>
+
+<router-outlet></router-outlet>
+
