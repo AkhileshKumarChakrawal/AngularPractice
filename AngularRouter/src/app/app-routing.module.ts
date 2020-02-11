@@ -1,25 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {StudentComponent} from "./student/student.component";
-import {StudentdetailsComponent} from "./studentdetails/studentdetails.component";
+import {StudentComponent} from './student/student.component'
+import {StudentdetailsComponent} from './studentdetails/studentdetails.component';
 import {PagenotfoundComponent} from "./pagenotfound/pagenotfound.component";
 
-
 const routes: Routes = [
-
   {
-    path :'student',
+    path : 'std' ,
     children : [
+      {path : '' , component: StudentComponent},
+
       {
-        path:'', component : StudentComponent
-      },
-      {
-        path : 'studentdetail', component: StudentdetailsComponent
+        path : 'stdDetail' , component: StudentdetailsComponent
       }
-    ]
+    ],
   },
   {
-    path : '**' , component : PagenotfoundComponent
+    path : '**', component: PagenotfoundComponent
   }
 ];
 
