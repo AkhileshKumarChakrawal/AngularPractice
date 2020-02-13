@@ -7,27 +7,20 @@ import {HomePageComponent} from "./home-page/home-page.component";
 import {ElectronicComponent} from "./electronic/electronic.component";
 import {LaptopComponent} from "./laptop/laptop.component";
 import {FormsubComponent} from "./formsub/formsub.component";
+import {UserComponent} from "./user/user.component";
 
 const routes: Routes = [
   {path : '', redirectTo : 'HomePage', pathMatch : 'full'},
   {
-    path : 'std' ,
+    path : 'std' ,component: StudentComponent,
     children : [
-
-      {path : '' , component: StudentComponent},
-
       {
-        path : 'stdDetail' , children : [
-          {
-            path : '' ,component : StudentdetailsComponent
-          },
-          {
-            path : 'stdDetail:/id' , component : FormsubComponent
-          }
-        ]
+        path : 'stdDetail' ,component : StudentdetailsComponent
       },
-
-    ],
+      {
+        path : 'stdDetail/:id' , component : StudentdetailsComponent
+      }
+    ]
   },
   {
     path : 'electronic',component : ElectronicComponent, children :[
@@ -38,7 +31,9 @@ const routes: Routes = [
 
     ]
   },
-
+  {
+    path : 'user' , component : UserComponent
+  },
   {
     path : '**', component: PagenotfoundComponent
   }

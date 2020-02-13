@@ -9,6 +9,8 @@ import { ParentCompComponent } from '../parent-comp/parent-comp.component';
 import {ChildCompComponent} from '../parent-comp/child-comp/child-comp.component';
 import { StudentComponent } from './student/student.component';
 import { StudentListComponent } from './student-list/student-list.component';
+import { StudentsComponent } from './students/students.component';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { StudentListComponent } from './student-list/student-list.component';
     ParentCompComponent,
     ChildCompComponent,
     StudentComponent,
-    StudentListComponent
+    StudentListComponent,
+    StudentsComponent,
+    StudentDetailComponent
   ],
   imports: [
     BrowserModule,
