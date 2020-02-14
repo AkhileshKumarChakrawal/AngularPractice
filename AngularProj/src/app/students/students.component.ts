@@ -23,6 +23,6 @@ export class StudentsComponent implements OnInit {
     this.route.navigate(['/students' , std.sid]);
   }
   editPage(std){
-    this.route.navigate(['/students' , std.sid]);
+    this.route.navigate(['/student' , std.sid]);
   }
 }
