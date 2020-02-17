@@ -12,8 +12,8 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentsComponent } from './students/students.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
-
-@NgModule({
+import {ServicDataService} from './servic-data.service';
+ @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
@@ -30,7 +30,7 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ServicDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ServicDataService} from "../servic-data.service";
 
 @Component({
   selector: 'app-student-detail',
@@ -8,18 +9,21 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 })
 export class StudentDetailComponent implements OnInit {
 
+  Marks : any;
   sid : number;
   english : number;
   math : number;
   physic : number
-  constructor(private activeRoute : ActivatedRoute) { }
+  constructor(private activeRoute : ActivatedRoute , private marksService : ServicDataService) {
+    this.Marks = marksService.getMarks();
+  }
 
-  Marks =[
+ /* Marks =[
     {math : 66, english : 77 , physics : 88, sid : 101},
     {math : 94, english : 58 , physics : 89, sid : 102},
     {math : 46, english : 98 , physics : 48, sid : 103},
     {math : 84, english : 39 , physics : 71, sid : 104}
-  ];
+  ];*/
   ngOnInit() {
     this.activeRoute.paramMap.subscribe((params : ParamMap)=>{
       this.sid = parseInt(params.get('id'));

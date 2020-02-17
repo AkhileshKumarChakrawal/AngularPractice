@@ -8,6 +8,10 @@ import {FormControl,FormGroup,Validators, FormBuilder,FormArrayName} from '@angu
 })
 export class AppComponent {
   title = 'AngularForm';
+  loadFeature : string;
+  numbers : any[] = [1,2,3,5,3,6,8,5,7];
+  odd = false;
+  server = [];
 
   /*regForm = new FormGroup({
     fname :new FormControl('',Validators.required),
@@ -44,5 +48,21 @@ export class AppComponent {
         address1 : 'sr nagar'
       }
     });
+  }
+
+  addServer(){
+    this.server.push("another server");
+  }
+  onRemove(id : number){
+    const position = id ;
+    this.server.splice(position , 1);
+  }
+
+  NavigateMethod(feature : string){
+  this.loadFeature = feature;
+  }
+  printOdd(){
+    this.odd = true;
+    this.numbers = this.numbers;
   }
 }

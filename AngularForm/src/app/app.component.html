@@ -1,3 +1,4 @@
+<!--
 
 <form [formGroup]="regForm" (ngSubmit)="onsubmit()">
  <div> <label>
@@ -38,12 +39,12 @@
     </label>
     </div>
   </div>
-  <!--<div formArrayName="mobile">
+  &lt;!&ndash;<div formArrayName="mobile">
     <h2>enter mobile number</h2>
     <button (click)="dynamicmob()">Add new mobile</button>
 
   </div>
--->
+&ndash;&gt;
   <button type="submit" [disabled]="!regForm.valid">submit</button>
   <p>
     <button (click)="updateformData()">partially update</button>
@@ -52,5 +53,33 @@
 </form>
 
 <p>{{regForm.status}}</p>
+-->
 
+<!--
+<app-header (featureload)="NavigateMethod($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipe *ngIf="loadFeature === 'recipe'"></app-recipe>
+      <app-shopping-list *ngIf="loadFeature !== 'recipe'">
+
+      </app-shopping-list>
+    </div>
+  </div>
+</div>
+-->
+
+<!--
+
+<h2>My server</h2>
+<button (click)="addServer()">Add Server</button>
+<ul>
+  <li *ngFor="let srvr of server let i = index" (click)="onRemove(i)">{{server}}</li>
+</ul>
+
+-->
+<button (click)="printOdd()">click me</button>
+<div *ngFor="let num of numbers">
+  <p>{{num}}</p>
+</div>
 <router-outlet></router-outlet>

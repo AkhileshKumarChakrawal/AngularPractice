@@ -1,0 +1,7 @@
+<p>recipe-list works!</p>
+<hr>
+<div class="row">
+<button>New Recipe</button><br>
+
+</div>
+<app-recipe-item *ngFor="let recp of recipes" [recipe]="recp" (loadrecipe)="onRecipeSelected(recp)"></app-recipe-item>

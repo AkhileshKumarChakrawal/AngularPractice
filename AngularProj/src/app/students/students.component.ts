@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {ServicDataService} from "../servic-data.service";
 
 @Component({
   selector: 'app-students',
@@ -8,14 +9,10 @@ import {Router} from '@angular/router';
 })
 export class StudentsComponent implements OnInit {
 
-  student = [
-    {sid : 101 , sname : 'Aman', address : {dist : 'Vns', state : 'UP', zip : 221005 }},
-    {sid : 102 , sname : 'Azhar', address : {dist : 'Mumbai', state : 'Maharastra', zip : 221003 }},
-    {sid : 103 , sname : 'Akash', address : {dist : 'Lucknow', state : 'UP', zip : 241063 }},
-    {sid : 104 , sname : 'Amar', address : {dist : 'Gorakhpur', state : 'UP', zip : 218503 }}
-    ];
-
-  constructor(private route : Router) { }
+  student : any
+  constructor(private route : Router, private service : ServicDataService) {
+    this.student = service.getStudent();
+  }
 
   ngOnInit() {
   }
