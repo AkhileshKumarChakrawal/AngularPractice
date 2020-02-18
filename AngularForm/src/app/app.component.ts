@@ -9,7 +9,8 @@ import {FormControl,FormGroup,Validators, FormBuilder,FormArrayName} from '@angu
 export class AppComponent {
   title = 'AngularForm';
   loadFeature : string;
-  numbers : any[] = [1,2,3,5,3,6,8,5,7];
+  even : any[] = [2,4,6,8,10];
+  oddnum : any[]=[1,3,5,7,9];
   odd = false;
   server = [];
 
@@ -61,8 +62,6 @@ export class AppComponent {
   NavigateMethod(feature : string){
   this.loadFeature = feature;
   }
-  printOdd(){
-    this.odd = true;
-    this.numbers = this.numbers;
-  }
+
+
 }

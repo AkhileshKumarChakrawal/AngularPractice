@@ -55,7 +55,8 @@
 <p>{{regForm.status}}</p>
 -->
 
-<!--
+
+recipe application
 <app-header (featureload)="NavigateMethod($event)"></app-header>
 <div class="container">
   <div class="row">
@@ -67,7 +68,7 @@
     </div>
   </div>
 </div>
--->
+
 
 <!--
 
@@ -78,8 +79,16 @@
 </ul>
 
 -->
-<button (click)="printOdd()">click me</button>
-<div *ngFor="let num of numbers">
-  <p>{{num}}</p>
+<!--directive-->
+<!--<button (click)="odd = !odd">click me</button>
+<ul>
+<div *ngIf="!odd" [ngClass]="{newClass:oddnum %2!==0}">
+  <li *ngFor="let num of oddnum">{{num}}</li>
 </div>
+  <div *ngIf="odd">
+    <li *ngFor="let num of even">{{num}}</li>
+  </div>
+</ul>-->
+
+<!--<app-account></app-account>-->
 <router-outlet></router-outlet>

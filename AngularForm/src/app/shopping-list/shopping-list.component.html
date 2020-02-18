@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-sm-10">
 
-     <app-shopping-edit></app-shopping-edit>
+     <app-shopping-edit (ingradientAddes)="newIngredientAdd($event)"></app-shopping-edit>
       <hr>
       <p>the list</p>
       <div *ngFor="let ing of ingridient">
